@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="static/img/HH_log.svg" type="image/x-icon">
+  <title>HappyHeart</title>
+
+
+
+
+  <!-- tailwindcss -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- navbar -->
+
+
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <img style="width: 4.5rem; aspect-ratio: 1 / 1;" src="static/img/HH_log.svg" alt="logo">
+        <span class=" self-center text-2xl font-semibold whitespace-nowrap ml-3 text-xl text-gray-900">Happy <span
+            style="color:rgb(255, 0, 0) ;">Heart</span></span>
+      </a>
+      <nav
+        class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+        <a href="#about" class="mr-5 hover:text-red-500">About</a>
+        <a href="#service" class="mr-5 hover:text-red-500">Service</a>
+        <a href="#contact" class="mr-5 hover:text-red-500">Contact</a>
+        <!-- <a class="mr-5 hover:text-gray-900">Fourth Link</a> -->
+      </nav>
+      <!-- <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button> -->
+    </div>
+  </header>
+
+
+  <!-- about -->
+
+  <section class="text-gray-600 body-font" id="about">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <img class="object-cover object-center rounded" alt="hero" src="static/img/heart_health.jpg">
+      </div>
+      <div
+        class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">Heart Disease Prediction
+          <br class="hidden lg:inline-block">Healthy Heart Happy Life.
+        </h1>
+        <p class="mb-8 leading-relaxed">A "Heart Disease Prediction" system is a specialized tool designed to assess an individual's risk of developing cardiovascular diseases (CVD) such as heart attacks or strokes. This system typically leverages a combination of machine learning algorithms, statistical analysis, and medical data to predict heart Disease outcomes. The primary objective is to provide early warnings and personalized insights, enabling timely medical interventions and lifestyle changes to mitigate risk.
+          It is a simple approch to predict, Future Heart condition of people by taking
+          the basic inputs like Age, Gender, Cholestrol and Heartbeats,
+          where a normal person can track using some wrist band or something.</p>
+        <!-- <div class="flex justify-center">
+          <button class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Button</button>
+          <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- service -->
+
+
+  <section class="text-gray-600 body-font relative" id="service">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-5xl font-bold title-font mb-4 text-gray-900">Calculate</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Heart Disease Prediction</p>
+      </div>
+      <div class="lg:w-1/2 md:w-2/3 mx-auto">
+        <form action="{{ url_for('predict') }}" method="POST">
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="Age" class="leading-7 text-sm text-gray-600">Enter Your Age</label>
+                <input type="text" id="Age" name="Age"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="Sex" class="leading-7 text-sm text-gray-600">Enter Your Sex</label>
+                <input type="text" id="Sex" name="Sex"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="CP" class="leading-7 text-sm text-gray-600">Enter Your CP</label>
+                <input type="text" id="CP" name="CP"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="Trestbps" class="leading-7 text-sm text-gray-600">Enter Your Trestbps</label>
+                <input type="text" id="Trestbps" name="Trestbps"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="Chol" class="leading-7 text-sm text-gray-600">Enter Your Chol</label>
+                <input type="text" id="Chol" name="Chol"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="FBS" class="leading-7 text-sm text-gray-600">Enter Your FBS</label>
+                <input type="text" id="FBS" name="FBS"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="Restecg" class="leading-7 text-sm text-gray-600">Enter Your Restecg</label>
+                <input type="text" id="Restecg" name="Restecg"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="Thalach" class="leading-7 text-sm text-gray-600">Enter Your Thalach</label>
+                <input type="text" id="Thalach" name="Thalach"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="Exange" class="leading-7 text-sm text-gray-600">Enter Your Exange</label>
+                <input type="text" id="Exange" name="Exange"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="Oldpeak" class="leading-7 text-sm text-gray-600">Enter Your Oldpeak</label>
+                <input type="text" id="Oldpeak" name="Oldpeak"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="Slope" class="leading-7 text-sm text-gray-600">Enter You Slope</label>
+                <input type="text" id="Slope" name="Slope"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="CA" class="leading-7 text-sm text-gray-600">Enter Your CA</label>
+                <input type="text" id="CA" name="CA"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="Thal" class="leading-7 text-sm text-gray-600">Enter Thal</label>
+                <input type="text" id="Thal" name="Thal"  autocomplete="off"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+
+         
+            <div class="p-2 w-full">
+              <button type="submit"
+                class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Predict</button>
+            </div>
+          </div>
+        </form>
+        <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+          <a class="text-red-500 text-lg">Result</a>
+          <p class="leading-normal my-5 text-xl">
+             {{prediction}}
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  
+  <!--Info-->
+
+  <!-- footer -->
+
+  <footer class="text-gray-600 body-font" id="contact">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <img style="width: 4.5rem; aspect-ratio: 1 / 1;" src="static/img/HH_log.svg" alt="logo">
+        <span class=" self-center text-2xl font-semibold whitespace-nowrap ml-3 text-xl text-gray-900">Happy <span
+            style="color:rgb(255, 0, 0) ;">Heart</span></span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023
+        Happy Disease —
+        <a href="..." class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">happyheart@gmail.com</a>
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+            viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+            viewBox="0 0 24 24">
+            <path
+              d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+            </path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
+            class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none"
+              d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
